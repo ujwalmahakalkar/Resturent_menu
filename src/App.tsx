@@ -6,7 +6,7 @@ import AdminDashboard from './pages/AdminDashboard';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/Resturent_menu">
       <Toaster
         position="top-right"
         toastOptions={{
