@@ -25,7 +25,7 @@ const categoryImages: Record<string, string> = {
 export default function CategorySelection({ categories, onCategorySelect }: CategorySelectionProps) {
   const sortedCategories = [...categories].sort((a, b) => a.order - b.order);
 
-  const getGridClass = (index: number, total: number) => {
+  const getGridClass = (index: number) => {
     // Create a pattern: 2 items, 2 items, 1 full-width item
     const position = index % 5;
     if (position < 2) return 'col-span-1'; // First two items
@@ -50,7 +50,7 @@ export default function CategorySelection({ categories, onCategorySelect }: Cate
         <div className="grid grid-cols-2 gap-4 md:gap-6">
           {sortedCategories.map((category, index) => {
             const image = categoryImages[category.id] || 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&h=400&fit=crop';
-            const gridClass = getGridClass(index, sortedCategories.length);
+            const gridClass = getGridClass(index);
 
             return (
               <button

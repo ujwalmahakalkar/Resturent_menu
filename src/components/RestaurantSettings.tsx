@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Restaurant } from '@/types';
 import { restaurantService } from '@/services/restaurantService';
 import toast from 'react-hot-toast';
-import { Save, Upload } from 'lucide-react';
+import { Save } from 'lucide-react';
 
 export default function RestaurantSettings() {
   const [formData, setFormData] = useState<Restaurant>(restaurantService.get());
